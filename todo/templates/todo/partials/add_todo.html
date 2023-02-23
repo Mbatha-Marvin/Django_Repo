@@ -1,0 +1,28 @@
+<form 
+    hx-put='/todo/update/{{ todo.id }}'
+    hx-target='this'
+    hx-swap='outerHTML'
+>
+
+    <article class="flex my-1 rounded-xl {% if todo.is_done %} bg-green-50 {% endif %}">
+        <div class="w-4/5 py-3">
+            <p class="px-6 text-s text-gray-900">{{ todo.title }}</p>
+        </div>
+        <div class="w-1/5 px-3 py-4 flex justify-end space-x-4">
+            {% if not todo.is_done%}
+                <button class="text-xs text-sky-600 hover:text-sky-900">
+                Done
+                </button>
+            {% endif %}
+
+            <a href="#"
+                class="text-xs text-sky-600 hover:text-sky-900"
+                hx-target="closest form"
+                hx-confirm='Are you sure?'
+                hx-swap="outerHTML swap:600ms "
+                hx-delete="/todo/delete/{{ todo.id }}"
+            >Delete</a>
+        </div>
+    </article>
+
+</form>

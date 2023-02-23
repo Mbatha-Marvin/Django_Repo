@@ -1,0 +1,17 @@
+<div class="flex " id="chat_body">
+    {% comment %} {% if chats.prompt %} {% endcomment %}
+    <div class="w-2/5"></div>
+    <div class="w-3/5 bg-blue-300 pr-5 py-2 mr-10 rounded-xl my-2 text-right" id="chat_prompt">
+        {{ chat.prompt }}
+    </div>
+    {% comment %} {% endif %} {% endcomment %}
+</div>
+
+<div class="flex ">
+    {% comment %} {% if chats.response %} {% endcomment %}
+    <div class="w-3/5 bg-green-300 pl-5 py-2 rounded-xl my-2" id="chat_reply">
+        {{ chat.response }}
+    </div>
+    <div class="w-2/5"></div>
+    {% comment %} {% endif %} {% endcomment %}
+</div>
